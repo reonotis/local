@@ -16,6 +16,9 @@ docker compose up -d
 ### laravel-11-react
 ```
 docker exec -it laravel_11_react_app bash
+cp /var/www/html/.env.example /var/www/html/.env
 composer install
+php artisan key:generate
+npm install
 npm run build
 ```

@@ -36,7 +36,5 @@ RUN mkdir -p /var/www/html/storage/framework/app/cache
 RUN mkdir -p /var/www/html/storage/framework/sessions
 RUN mkdir -p /var/www/html/storage/framework/views
 RUN chmod 777 /var/www/html/storage/ -R
-RUN cp .env.example .env
-RUN php artisan key:generate
 
 
