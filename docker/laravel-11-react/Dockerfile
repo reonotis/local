@@ -31,5 +31,12 @@ EXPOSE 80
 
 # 作業ディレクトリを /var/www/html に設定
 WORKDIR /var/www/html
-WORKDIR chmod 777 -R storage/
+RUN mkdir -p /var/www/html/storage/framework/cache/data/
+RUN mkdir -p /var/www/html/storage/framework/app/cache
+RUN mkdir -p /var/www/html/storage/framework/sessions
+RUN mkdir -p /var/www/html/storage/framework/views
+RUN chmod 777 /var/www/html/storage/ -R
+RUN cp .env.example .env
+RUN php artisan key:generate
+
 
