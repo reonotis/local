@@ -8,7 +8,30 @@ services:
     container_name: laravel_11_react_app
     # ローカルのプロジェクトディレクトリをコンテナにマウント
     volumes:
-      - ./laravel-11-react:/var/www/html
+      # - ./laravel-11-react:/var/www/html
+      - ./laravel-11-react/app:/var/www/html/app
+      - ./laravel-11-react/bootstrap:/var/www/html/bootstrap
+      - ./laravel-11-react/config:/var/www/html/config
+      - ./laravel-11-react/database:/var/www/html/database
+      - ./laravel-11-react/node_modules:/var/www/html/node_modules
+      - ./laravel-11-react/public:/var/www/html/public
+      - ./laravel-11-react/resources:/var/www/html/resources
+      - ./laravel-11-react/routes:/var/www/html/routes
+      - ./laravel-11-react/storage/logs:/var/www/html/storage/logs
+      - ./laravel-11-react/storage/app:/var/www/html/storage/app
+      - ./laravel-11-react/tests:/var/www/html/tests
+      - ./laravel-11-react/.editorconfig:/var/www/html/.editorconfig
+      - ./laravel-11-react/.env:/var/www/html/.env
+      - ./laravel-11-react/.env.example:/var/www/html/.env.example
+      - ./laravel-11-react/artisan:/var/www/html/artisan
+      - ./laravel-11-react/composer.json:/var/www/html/composer.json
+      - ./laravel-11-react/composer.lock:/var/www/html/composer.lock
+      - ./laravel-11-react/package.json:/var/www/html/package.json
+      - ./laravel-11-react/package-lock.json:/var/www/html/package-lock.json
+      - ./laravel-11-react/phpunit.xml:/var/www/html/phpunit.xml
+      - ./laravel-11-react/postcss.config.js:/var/www/html/postcss.config.js
+      - ./laravel-11-react/tailwind.config.js:/var/www/html/tailwind.config.js
+      - ./laravel-11-react/vite.config.js:/var/www/html/vite.config.js
     ports:
       - "82:80"
     depends_on:
